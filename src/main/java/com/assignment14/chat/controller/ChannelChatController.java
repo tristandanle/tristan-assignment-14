@@ -23,8 +23,8 @@ public class ChannelChatController {
     public OutChatMessage handleMessaging(InChatMessage message ) throws Exception {
     		                             
 	Thread.sleep(1000); 
+	    
     	Integer number = message.getNumber();
-    	System.out.println("number+: "+number);
     	Channel channel = Channel.getChannel(number); 
     	channel.addMessage(message);
        
@@ -35,20 +35,24 @@ public class ChannelChatController {
     @MessageMapping("/typing")
     @SendTo("/topic/typings")
     public OutChatMessage handleTyping(InChatMessage message) throws Exception {
+	    
         return new OutChatMessage(message.getSenderName() + " is typing ...");
      }
 
 	
 	@RequestMapping("/")
 	public String redirectToWecomePage( ) {
+		
 		return "redirect:/welcome";
 	}
 	
 	
 	@RequestMapping("/welcome")
 	public String welcomePageView(ModelMap model ) {
+		
 		Channel channel= Channel.getChannel(1); 
 		model.put("channel", channel);
+		
 		return "welcome";
 	}
 	
@@ -56,7 +60,6 @@ public class ChannelChatController {
 	public String getChatPageView(@PathVariable  Integer number, ModelMap model) {
 		
 		Channel channel= Channel.getChannel(number);
-		
 		model.put("channel", channel);
 		
 		return "channel";
