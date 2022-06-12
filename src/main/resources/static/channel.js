@@ -63,7 +63,7 @@ function showTyping(message) {
 }
 
 $(function() {
-	$("form").on('submit', function(e) { e.preventDefault(); });
+	//$("form").on('submit', function(e) { e.preventDefault(); });
 	$("#guestName").val(guestname);
 	$("#guestName").ready(function() { connect(); });
 	$("#send").click(function() { sendMessage(parseInt($("#channel").text())); });
