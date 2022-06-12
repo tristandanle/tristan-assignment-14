@@ -2,20 +2,18 @@ package com.assignment14.chat.domain;
 
 public class InChatMessage {
 
-    private String senderName;
-    private String message;
-    private Integer number;
+      private String senderName;
+      private String message;
+      private Integer number;
    
-    public InChatMessage() {
-    }
+       public InChatMessage() {
+      }
     
-    
-
-    public InChatMessage(String message) {
+       public InChatMessage(String message) {
     	this.message = message;
-    }
+       }
     
-    public InChatMessage(Integer number, String senderName, String message) {
+       public InChatMessage(Integer number, String senderName, String message) {
 		this.message = message;
 		this.senderName = senderName;
 		this.number = number;
@@ -31,16 +29,11 @@ public class InChatMessage {
 
 	public String getSenderName() {
         return senderName;
-    }
+        }
 
-    public void setSenderName(String senderName) {
+        public void setSenderName(String senderName) {
         this.senderName = senderName;
-    }
-
-	@Override
-	public String toString() {
-		return "InChatMessage [senderName=" + senderName + ", message=" + message + "]";
-	}
+        }
 
 	public Integer getNumber() {
 		return number;
@@ -48,6 +41,11 @@ public class InChatMessage {
 
 	public void setNumber(Integer number) {
 		this.number = number;
+	}
+	
+	@Override
+	public String toString() {
+		return "InChatMessage [senderName=" + senderName + ", message=" + message + ", number=" + number + "]";
 	}
 	
 }
