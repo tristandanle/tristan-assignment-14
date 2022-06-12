@@ -22,14 +22,13 @@ public class ChannelChatController {
     @SendTo("/topic/guestchats")  
     public OutChatMessage handleMessaging(InChatMessage message ) throws Exception {
     		                             
-	   Thread.sleep(1000); 
+	Thread.sleep(1000); 
     	Integer number = message.getNumber();
     	System.out.println("number+: "+number);
     	Channel channel = Channel.getChannel(number); 
     	channel.addMessage(message);
-      	
        
-       return new OutChatMessage(HtmlUtils.htmlEscape(message.getSenderName() + ":" + message.getMessage()));
+        return new OutChatMessage(HtmlUtils.htmlEscape(message.getSenderName() + ":" + message.getMessage()));
 	   
     }
 
