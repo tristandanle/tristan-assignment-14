@@ -5,25 +5,24 @@ public class OutChatMessage {
 	private String content;
 	
 	public OutChatMessage() {
-		
 	}
 	
 	public OutChatMessage(String content) {
         this.content = content;
-    }
+        }
 	
 	
-	public String getContent() {
+	 public String getContent() {
 		return content;
-	}
+	 }
 	
-	public void setContent(String content) {
+	 public void setContent(String content) {
 		this.content = content;
-	}
+	 }
 
-	@Override
-	public String toString() {
+	 @Override
+	 public String toString() {
 		return "OutChatMessage [content=" + content + "]";
-	}
+	 }
 
 }
