@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+  <head>
+    <title>Chat </title>
+    <link href="/webjars/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/main.css" rel="stylesheet">
+    <link rel="shortcut icon" href="#">
+    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+    <script src="/webjars/sockjs-client/sockjs.min.js"></script>
+    <script src="/webjars/stomp-websocket/stomp.min.js"></script>
+    <script src="/channel.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sockjs-client@1/dist/sockjs.min.js"></script>
+    
+  </head>
+
+  <body>
+     
+ 	<div id="main-content" class="container">
+<!--         <div id="channel" class="text-muted text-right" th:text="|Channel #${channel.getNumber}|"> </div> -->
+        <div class="text-muted text-right">
+          <span>Channel #</span><span id="channel" th:text="${channel.getNumber}"></span>
+        </div>
+        
+        
+        <!-- Display guest name -->
+  		<div class="row" >
+            <div class="col-xs-6">
+               <input type="text" id="guestName"  >
+           </div>
+    	</div>
+    	
+    	
+    
+        <!-- Message displayed -->
+    	<div class="row" >
+        	<div class="col-xs-8">
+        		<h3 class="text-muted">Messages</h3>
+        		
+        		<div class="text-muted" align="right" style="font-weight:bold;font-style: italic;font-size:10px;" id="typing"></div>
+           		
+           		<table id="conversation" class="table table-striped">
+                	<tbody id="chatMessages">
+                	   
+                	   <tr th:each="message: ${channel.listMessages}">
+                	   <td><strong th:text="${message.senderName}"></strong>: <span th:text="${message.message}" ></span></td>
+                      </tr>
+                	   
+                	   
+                	</tbody>
+            	</table>
+            	
+            	<table id="localStore" class="table table-striped">
+                	<tbody id="localdata">
+                	</tbody>
+            	</table>
+        	</div>
+   		 </div>
+          
+         <!-- Messages input -->               
+   		 <div class="row" >  
+    		<div class="col-md-6">
+	            <form class="form-inline">
+	                <div class="form-group" >
+	                   <input  type="text" id="message" class="form-control" placeholder="Message here...">
+	                    <button id="send" class="btn btn-outline-secondary" type="submit">Send</button>
+	                </div>
+	            </form>
+        	</div>
+    	 </div>
+    </div>
+  </body>
+</html>

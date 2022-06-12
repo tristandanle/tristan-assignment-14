@@ -1,0 +1,46 @@
+body {
+    background-color: #f5f5f5;
+}
+
+#main-content {
+    max-width:700px;
+    padding: 2em 3em;
+    margin: 0 auto 0px;
+    background-color: #fff;
+    border: 1px solid #e5e5e5;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+
+input[type=text], select {
+  width: 50%;
+  padding: 6px 20px;
+  margin: 2px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type=sumbit] {
+  width: 50%;
+  padding: 6px 20px;
+  margin: 2px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.note {
+    max-width:700px;
+    padding: 0 0px;
+    margin: 0 auto 20px;
+    background-color: #fff;
+   
+  border: 0px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
