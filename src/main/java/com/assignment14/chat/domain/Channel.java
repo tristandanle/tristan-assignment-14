@@ -25,17 +25,12 @@ public class Channel {
 		
 	}
     
-    public Integer getNumber() {
+        public Integer getNumber() {
 		return number;
 	}
 
 	public void setNumber(Integer number) {
 		this.number = number;
-	}
-
-	@Override
-	public String toString() {
-		return "Channel [number=" + number + "]";
 	}
 
 	
@@ -45,6 +40,11 @@ public class Channel {
 
 	public List<InChatMessage> getListMessages() {
 		return listMessages;
+	}
+	
+	@Override
+	public String toString() {
+		return "Channel [number=" + number + ", listMessages=" + listMessages + "]";
 	}
 
 	
