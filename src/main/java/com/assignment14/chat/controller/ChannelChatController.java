@@ -41,7 +41,7 @@ public class ChannelChatController {
 
 	
 	@RequestMapping("/")
-	public String handleAPrompt( ) {
+	public String redirectToWecomePage( ) {
 		return "redirect:/welcome";
 	}
 	
